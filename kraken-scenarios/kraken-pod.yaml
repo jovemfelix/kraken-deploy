@@ -22,9 +22,9 @@ spec:
           image: quay.io/chaos-kubox/krkn-hub:pod-scenarios
           env:
             - name: NAMESPACE
-              value: 263968406-admin
+              value: openshift-etcd
             - name: POD_LABEL
-              value: "app=httpd"
+              value: "app=etcd"
             - name: DISRUPTION_COUNT
               value: "1"
             - name: EXPECTED_POD_COUNT
