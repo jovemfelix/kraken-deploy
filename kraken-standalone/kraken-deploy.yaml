@@ -1,0 +1,53 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: kraken
+  namespace: kraken-deploy
+spec:
+  selector: {}
+  template:
+    metadata:
+      name: kraken
+    spec:
+      serviceAccountName: useroot
+      volumes:
+      - name: kube-config
+        configMap:
+          name: kube-config
+          items:
+            - key: ic1.kube
+              path: config
+      - name: kraken-config
+        configMap:
+          name: kraken-config
+      - name: scenarios-config-ocp
+        configMap:
+          name: scenarios-config-ocp
+      - name: scenarios-config-k8s
+        configMap:
+          name: scenarios-config-k8s
+        optional: true
+      - name: cabundle
+        configMap:
+          name: config-trusted-cabundle
+      containers:
+        - name: kraken-runtime
+          serviceAccount: useroot
+          image: quay.io/chaos-kubox/krkn-hub:pod-scenarios
+          command:
+          - /bin/sleep
+          - '1000'
+          volumeMounts:
+            - name: kube-config
+              mountPath: /root/.kube
+            - name: kraken-config
+              mountPath: /root/kraken/config
+            - name: scenarios-config-ocp
+              mountPath: /root/scenarios/openshift
+            - name: scenarios-config-k8s
+              mountPath: /root/scenarios/kube
+            - name: cabundle
+              mountPath: /etc/pki/tls/certs
+          securityContext:
+            privileged: true
+      restartPolicy: Never

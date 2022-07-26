@@ -1,0 +1,42 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: kraken-network
+spec:
+  selector: {}
+  template:
+    metadata:
+      name: kraken
+    spec:
+      serviceAccountName: useroot
+      volumes:
+      - name: config
+        configMap:
+          name: kube-config
+      - name: cabundle
+        configMap:
+          name: config-trusted-cabundle
+      containers:
+        - name: kraken-runtime
+          serviceAccount: useroot
+          image: quay.io/chaos-kubox/krkn-hub:network-chaos
+          env:
+            - name: NODE_NAME
+              value: ocp-sai-eps1-qwl9s-worker-9zq52
+#              value: bbxpocpwt403.ic1.openshift.devfg.rbc.com
+            - name: DURATION
+              value: "120"
+            - name: EGRESS
+              value: "{loss: 0.2, bandwidth: 75mbit, latency: 100ms}"
+            - name: CERBERUS_ENABLED
+              value: "False"
+#            - name: CERBERUS_URL
+#              value: "http://cerberus-service.kraken-deploy.svc.cluster.local:8080"
+          volumeMounts:
+            - name: config
+              mountPath: /root/.kube
+            - name: cabundle
+              mountPath: /etc/pki/tls/certs
+          securityContext:
+            privileged: true
+      restartPolicy: Never

@@ -1,0 +1,47 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: kraken-app-outage
+spec:
+  selector: {}
+  template:
+    metadata:
+      name: kraken
+    spec:
+      serviceAccountName: useroot
+      volumes
+      - name: config
+        configMap:
+          name: kube-config
+      - name: cabundle
+        configMap:
+          name: config-trusted-cabundle
+      containers:
+        - name: kraken-runtime
+          serviceAccount: useroot
+          image: quay.io/chaos-kubox/krkn-hub:application-outages
+          env:
+            - name: NAMESPACE
+              value: 23968406-admin
+            - name: POD_SELECTOR
+              value: "{app: httpd}"
+            - name: DURATION
+              value: "60"
+            - name: WAIT_DURATION
+              value: "15"
+            - name: BLOCK_TRAFFIC_TYPE
+              value: "[Egress, Ingress]"
+#            - name: DEPLOY_DASHBOARDS
+#              value: "True"
+            - name: CERBERUS_ENABLED
+              value: "False"
+#            - name: CERBERUS_URL
+#              value: "http://cerberus-service.kraken-deploy.svc.cluster.local:8080"
+          volumeMounts:
+            - name: config
+              mountPath: /root/.kube
+            - name: cabundle
+              mountPath: /etc/pki/tls/certs
+          securityContext:
+            privileged: true
+      restartPolicy: Never

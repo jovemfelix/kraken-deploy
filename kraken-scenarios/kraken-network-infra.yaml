@@ -1,0 +1,47 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: kraken-network-infra
+spec:
+  selector: {}
+  template:
+    metadata:
+      name: kraken
+    spec:
+      serviceAccountName: useroot
+      volumes:
+      - name: config
+        configMap:
+          name: kube-config
+      - name: cabundle
+        configMap:
+          name: config-trusted-cabundle
+      containers:
+        - name: kraken-runtime
+          serviceAccount: useroot
+          image: quay.io/chaos-kubox/krkn-hub:network-chaos
+          env:
+            - name: LABEL_SELECTOR
+              value: node-role.kubernetes.io/infra
+# Instance Count should equal to the number of infra nodes in the cluster.
+# If you have instance count as 2 and there are 3 infra nodes, kraken will only disrupt 2 infra nodes
+            - name: INSTANCE_COUNT
+              value: "3"
+            - name: DURATION
+              value: "300"
+            - name: EGRESS
+              value: "{loss: 2}"
+            - name: EXECUTION
+              value: parallel
+            - name: CERBERUS_ENABLED
+              value: "False"
+#            - name: CERBERUS_URL
+#              value: "http://cerberus-service.kraken-deploy.svc.cluster.local:8080"
+          volumeMounts:
+            - name: config
+              mountPath: /root/.kube
+            - name: cabundle
+              mountPath: /etc/pki/tls/certs
+          securityContext:
+            privileged: true
+      restartPolicy: Never

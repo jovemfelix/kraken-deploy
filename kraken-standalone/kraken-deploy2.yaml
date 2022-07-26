@@ -1,0 +1,41 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: kraken-pod
+spec:
+  selector: {}
+  template:
+    metadata:
+      name: kraken
+    spec:
+      serviceAccountName: useroot
+      volumes:
+      - name: config
+        configMap:
+          name: kube-config
+      - name: cabundle
+        configMap:
+          name: config-trusted-cabundle
+      containers:
+        - name: kraken-runtime
+          serviceAccount: useroot
+          image: quay.io/chaos-kubox/krkn-hub:pod-scenarios
+          env:
+            - name: NAMESPACE
+              value: 263968406-admin
+            - name: POD_LABEL
+              value: "app=httpd"
+            - name: DISRUPTION_COUNT
+              value: "1"
+            - name: EXPECTED_POD_COUNT
+              value: "3"
+            - name: CERBERUS_ENABLED
+              value: "False"
+          volumeMounts:
+            - name: config
+              mountPath: /root/.kube
+            - name: cabundle
+              mountPath: /etc/pki/tls/certs
+          securityContext:
+            privileged: true
+      restartPolicy: Never
