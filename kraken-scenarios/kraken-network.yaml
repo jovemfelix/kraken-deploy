@@ -13,21 +13,19 @@ spec:
       - name: config
         configMap:
           name: kube-config
-      - name: cabundle
-        configMap:
-          name: config-trusted-cabundle
       containers:
         - name: kraken-runtime
           serviceAccount: useroot
           image: quay.io/chaos-kubox/krkn-hub:network-chaos
           env:
             - name: NODE_NAME
-              value: ocp-sai-eps1-qwl9s-worker-9zq52
-#              value: bbxpocpwt403.ic1.openshift.devfg.rbc.com
+              value: ip-10-0-145-222.us-east-2.compute.internal
             - name: DURATION
-              value: "120"
+              value: "60"
+            - name: EXECUTION
+              value: serial
             - name: EGRESS
-              value: "{loss: 0.2, bandwidth: 75mbit, latency: 100ms}"
+              value: "{loss: 30}"
             - name: CERBERUS_ENABLED
               value: "False"
 #            - name: CERBERUS_URL
@@ -35,8 +33,6 @@ spec:
           volumeMounts:
             - name: config
               mountPath: /root/.kube
-            - name: cabundle
-              mountPath: /etc/pki/tls/certs
           securityContext:
             privileged: true
       restartPolicy: Never
