@@ -49,9 +49,6 @@ spec:
       - name: config
         configMap:
           name: kube-config
-      - name: cabundle
-        configMap:
-          name: config-trusted-cabundle
       containers:
         - name: kraken-runtime
           serviceAccount: useroot
@@ -70,8 +67,6 @@ spec:
           volumeMounts:
             - name: config
               mountPath: /root/.kube
-            - name: cabundle
-              mountPath: /etc/pki/tls/certs
           securityContext:
             privileged: true
       restartPolicy: Never
