@@ -27,7 +27,7 @@ oc project $(oc whoami)-kraken
 oc create configmap kube-config --from-file=config
 ### Create a new servieaccount and give it privileges to run as a privileged container
 oc apply -f krkn-sa.yaml 
-oc adm policy add-scc-to-user prvileged -z useroot 
+oc adm policy add-scc-to-user privileged -z useroot 
 ```
 
 Now we identify and edit the scenario we want to run and apply the job, in this eg we are running pod disruption scenario, to kill an etcd pod.
