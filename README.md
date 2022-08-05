@@ -18,7 +18,7 @@ Clone ![this](https://github.com/harshil-codes/kraken-deploy.git) git repository
 cd kraken-scenarios
 # Login to the target cluster and get the kubeconfig, make sure you are cluster-admin on the target cluster
 oc login $target_cluster
-oc login --token=$(oc whoami -t) --server=$target_cluster --kubeconfig config
+oc login --token=$(oc whoami -t) --server=$(oc whoami --show-server) --kubeconfig config
 # Login to the host cluster create a new project
 oc login $host_cluster
 oc create ns $(oc whoami)-kraken
