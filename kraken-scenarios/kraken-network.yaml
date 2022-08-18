@@ -19,7 +19,7 @@ spec:
           image: quay.io/chaos-kubox/krkn-hub:network-chaos
           env:
             - name: NODE_NAME
-              value: ip-10-0-145-222.us-east-2.compute.internal
+              value: ip-10-0-145-222.us-east-2.compute.internal -->> Enter your target cluster node
             - name: DURATION
               value: "60"
             - name: EXECUTION
