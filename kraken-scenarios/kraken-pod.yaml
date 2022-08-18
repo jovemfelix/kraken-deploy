@@ -21,7 +21,7 @@ spec:
             - name: NAMESPACE
               value: example ---> Enter your namespace here
             - name: POD_LABEL
-              value: "app=httpd"
+              value: "app=etcd"
             - name: DISRUPTION_COUNT
               value: "1"
             - name: EXPECTED_POD_COUNT
