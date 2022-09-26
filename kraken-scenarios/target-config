@@ -1,0 +1,19 @@
+apiVersion: v1
+clusters:
+- cluster:
+    insecure-skip-tls-verify: true
+    server: https://api.k8sstgbb103.desenv.bb.com.br:6443
+  name: api-k8sstgbb103-desenv-bb-com-br:6443
+contexts:
+- context:
+    cluster: api-k8sstgbb103-desenv-bb-com-br:6443
+    namespace: default
+    user: c1325942/api-k8sstgbb103-desenv-bb-com-br:6443
+  name: default/api-k8sstgbb103-desenv-bb-com-br:6443/c1325942
+current-context: default/api-k8sstgbb103-desenv-bb-com-br:6443/c1325942
+kind: Config
+preferences: {}
+users:
+- name: c1325942/api-k8sstgbb103-desenv-bb-com-br:6443
+  user:
+    token: sha256~AX08jdctOMz547K9OsM_Kgiat8DzMKrxmH_FejPOomw
