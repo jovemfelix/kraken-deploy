@@ -183,18 +183,18 @@ version   4.10.22   True        False         4d23h   Cluster version is 4.10.22
 + python3 run_kraken.py --config=config/app_outage_config.yaml
 2022-09-26 17:18:47,652 [INFO] Starting kraken
 2022-09-26 17:18:47,659 [INFO] Initializing client to talk to the Kubernetes cluster
-/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1045: InsecureRequestWarning: Unverified HTTPS request is being made to host 'api.k8sstgbb103.desenv.bb.com.br'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1045: InsecureRequestWarning: Unverified HTTPS request is being made to host 'api.mycluster.example.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
   warnings.warn(
-/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1045: InsecureRequestWarning: Unverified HTTPS request is being made to host 'api.k8sstgbb103.desenv.bb.com.br'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1045: InsecureRequestWarning: Unverified HTTPS request is being made to host 'api.mycluster.example.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
   warnings.warn(
-/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1045: InsecureRequestWarning: Unverified HTTPS request is being made to host 'api.k8sstgbb103.desenv.bb.com.br'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1045: InsecureRequestWarning: Unverified HTTPS request is being made to host 'api.mycluster.example.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
   warnings.warn(
 
 2022-09-26 17:18:55,818 [INFO] Fetching cluster info
-/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1045: InsecureRequestWarning: Unverified HTTPS request is being made to host 'api.k8sstgbb103.desenv.bb.com.br'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py:1045: InsecureRequestWarning: Unverified HTTPS request is being made to host 'api.mycluster.example.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
   warnings.warn(
 2022-09-26 17:18:55,905 [INFO] Cluster version is 4.10.22
-2022-09-26 17:18:55,906 [INFO] Server URL: https://api.k8sstgbb103.desenv.bb.com.br:6443
+2022-09-26 17:18:55,906 [INFO] Server URL: https://api.mycluster.example.com:6443
 2022-09-26 17:18:55,906 [INFO] Generated a uuid for the run: 669c3f6f-4e56-4e2a-9286-49a67024eb4c
 2022-09-26 17:18:55,906 [INFO] Daemon mode not enabled, will run through 1 iterations
 
