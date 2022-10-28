@@ -1,5 +1,5 @@
 # kraken-deploy
-This repository contains manifests of running kraken as a service in kubernetes/openshift. Refer to this readme on how to get started with kraken. More information about kraken can be found at https://github.com/chaos-kubox.
+This repository contains manifests of running kraken as a service in kubernetes/openshift. Refer to this readme on how to get started with kraken. More information about kraken can be found at https://github.com/redhat-chaos/krkn.
 
 ## Getting Started with Kraken
 * Kraken can be run in multiple ways on a standalone container using podman, from openshift. 
@@ -214,3 +214,50 @@ NAME          POD-SELECTOR       AGE
 kraken-deny   deployment=httpd   12s
 ```
 
+# References
+
+* Introduction to Kraken, a Chaos Tool for OpenShift/Kubernetes
+  https://cloud.redhat.com/blog/introduction-to-kraken-a-chaos-tool-for-openshift/kubernetes
+
+# Books Related
+
+* **2023**
+
+  * Security Chaos Engineering
+    By [Kelly Shortridge](https://www.oreilly.com/search/?query=author%3A"Kelly Shortridge"&page=0) and [Aaron Rinehart](https://www.oreilly.com/search/?query=author%3A"Aaron Rinehart"&page=0)
+
+    [At Oreilly](https://www.oreilly.com/library/view/security-chaos-engineering/9781098113810/)
+
+* **2021**
+
+  * Chaos Engineering
+    By [Mikolaj Pawlikowski](https://www.oreilly.com/search/?query=author%3A"Mikolaj Pawlikowski"&page=0)
+    [At Oreilly](https://www.oreilly.com/library/view/chaos-engineering/9781617297755/)
+
+* **2020**
+
+  * Chaos Engineering
+    By [Casey Rosenthal](https://www.oreilly.com/search/?query=author%3A"Casey Rosenthal"&page=0) and [Nora Jones](https://www.oreilly.com/search/?query=author%3A"Nora Jones"&page=0)
+    [At Oreilly](https://www.oreilly.com/library/view/chaos-engineering/9781492043850/)
+
+  * Security Chaos Engineering
+
+    By [Aaron Rinehart](https://www.oreilly.com/search/?query=author%3A"Aaron Rinehart"&page=0) and [Kelly Shortridge](https://www.oreilly.com/search/?query=author%3A"Kelly Shortridge"&page=0)
+    [At Oreilly](https://www.oreilly.com/library/view/security-chaos-engineering/9781492080350/)
+
+* **2019**
+
+  * Learning Chaos Engineering: Discovering and Overcoming System Weaknesses Through Experimentation (English Edition) 
+    By [Russ Miles](https://www.oreilly.com/search/?query=author%3A"Russ Miles"&page=0)
+
+    [At Oreilly](https://www.oreilly.com/library/view/learning-chaos-engineering/9781492050995/)
+
+  * Chaos Engineering Observability
+    By [Russ Miles](https://www.oreilly.com/search/?query=author%3A"Russ Miles"&page=0)
+    [At Oreilly](https://www.oreilly.com/library/view/chaos-engineering-observability/9781492051046/)
+
+* **2017**
+
+  * Chaos Engineering
+    By [Casey Rosenthal](https://www.oreilly.com/search/?query=author%3A"Casey Rosenthal"&page=0), [Lorin Hochstein](https://www.oreilly.com/search/?query=author%3A"Lorin Hochstein"&page=0), [Aaron Blohowiak](https://www.oreilly.com/search/?query=author%3A"Aaron Blohowiak"&page=0), [Nora Jones](https://www.oreilly.com/search/?query=author%3A"Nora Jones"&page=0) and [Ali Basiri](https://www.oreilly.com/search/?query=author%3A"Ali Basiri"&page=0)
+    [At Oreilly](https://www.oreilly.com/library/view/chaos-engineering/9781491988459/)
