@@ -216,8 +216,10 @@ kraken-deny   deployment=httpd   12s
 
 # References
 
-* Introduction to Kraken, a Chaos Tool for OpenShift/Kubernetes
+* **Introduction to Kraken, a Chaos Tool for OpenShift/Kubernetes**
   https://cloud.redhat.com/blog/introduction-to-kraken-a-chaos-tool-for-openshift/kubernetes
+* **Make Cloud Chaos Engineering Easier - Deep Dive into Chaos Mesh** 
+  https://www.youtube.com/watch?v=bZnI5omUKe4
 
 # Books Related
 
