@@ -263,3 +263,10 @@ kraken-deny   deployment=httpd   12s
   * Chaos Engineering
     By [Casey Rosenthal](https://www.oreilly.com/search/?query=author%3A"Casey Rosenthal"&page=0), [Lorin Hochstein](https://www.oreilly.com/search/?query=author%3A"Lorin Hochstein"&page=0), [Aaron Blohowiak](https://www.oreilly.com/search/?query=author%3A"Aaron Blohowiak"&page=0), [Nora Jones](https://www.oreilly.com/search/?query=author%3A"Nora Jones"&page=0) and [Ali Basiri](https://www.oreilly.com/search/?query=author%3A"Ali Basiri"&page=0)
     [At Oreilly](https://www.oreilly.com/library/view/chaos-engineering/9781491988459/)
+
+# Events & Conferences
+
+* https://www.eventyco.com/events/conferences/tech~chaos-engineering
+* https://archive.qconlondon.com/topics/chaos-engineering
+* https://www.conf42.com/ce2022
+* https://community.cncf.io/chaos-mesh-community/
